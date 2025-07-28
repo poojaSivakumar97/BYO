@@ -1,0 +1,21 @@
+.iconContainer{
+   padding-left: 50px;
+}
+.icon{
+   cursor: pointer;
+   width: 15px;
+}
+
+.folder{
+   padding-left: 20px;
+   cursor: pointer;
+}
+.fileName{
+   cursor: pointer;
+   
+}
+.fileName-active{
+   cursor: pointer;
+   text-decoration: underline;
+
+}

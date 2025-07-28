@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "name": "public",
+    "isFolder": true,
+    "parentId": 0,
+    "children": [
+      {
+        "id": 7,
+        "name": "assets",
+        "isFolder": true,
+        "parentId": 1,
+        "children": [
+          { "id": 8, "name": "logo.png", "isFolder": false, "parentId": 7 },
+          {
+            "id": 9,
+            "name": "images",
+            "isFolder": true,
+            "parentId": 7,
+            "children": [
+              {
+                "id": 10,
+                "name": "background.jpg",
+                "isFolder": false,
+                "parentId": 9
+              },
+              {
+                "id": 11,
+                "name": "banner.png",
+                "isFolder": false,
+                "parentId": 9
+              },
+              { "id": 12, "name": "icon.png", "isFolder": false, "parentId": 9 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "src",
+    "isFolder": true,
+    "parentId": 0,
+    "children": [
+      {
+        "id": 13,
+        "name": "components",
+        "isFolder": true,
+        "parentId": 2,
+        "children": [
+          { "id": 14, "name": "Header.js", "isFolder": false, "parentId": 13 },
+          { "id": 15, "name": "Footer.js", "isFolder": false, "parentId": 13 },
+          { "id": 16, "name": "Sidebar.js", "isFolder": false, "parentId": 13 }
+        ]
+      },
+      {
+        "id": 17,
+        "name": "hooks",
+        "isFolder": true,
+        "parentId": 2,
+        "children": [
+          {
+            "id": 18,
+            "name": "useFetch.js",
+            "isFolder": false,
+            "parentId": 17
+          },
+          {
+            "id": 19,
+            "name": "useLocalStorage.js",
+            "isFolder": false,
+            "parentId": 17
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "name": "utils",
+        "isFolder": true,
+        "parentId": 2,
+        "children": [
+          { "id": 21, "name": "helpers.js", "isFolder": false, "parentId": 20 },
+          {
+            "id": 22,
+            "name": "constants.js",
+            "isFolder": false,
+            "parentId": 20
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "name": "App.jsx",
+        "isFolder": false
+      },
+      {
+        "id": 24,
+        "name": "main.jsx",
+        "isFolder": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": ".gitignore",
+    "isFolder": false,
+    "parentId": 0
+  },
+  { "id": 4, "name": "index.html", "isFolder": false, "parentId": 0 },
+  {
+    "id": 5,
+    "name": "package.json",
+    "isFolder": false,
+    "parentId": 0
+  },
+  {
+    "id": 6,
+    "name": "README.md",
+    "isFolder": false,
+    "parentId": 0
+  }
+]
