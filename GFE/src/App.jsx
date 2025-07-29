@@ -4,7 +4,9 @@ import FileExplorer from "./machine_coding/FileExplorer";
 const App = () => {
   return (
     <div>
-      <FileExplorer />
+      <aside>
+        <FileExplorer />
+      </aside>
     </div>
   );
 };

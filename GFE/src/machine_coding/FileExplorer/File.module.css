@@ -1,5 +1,11 @@
+aside{
+   width: 200px;
+}
 .iconContainer{
    padding-left: 50px;
+}
+.selectedNode{
+   border: 1px solid indigo;
 }
 .icon{
    cursor: pointer;
