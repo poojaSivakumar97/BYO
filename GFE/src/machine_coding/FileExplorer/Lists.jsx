@@ -12,6 +12,8 @@ const Lists = ({
   parentNodeTobeAdded,
   handleAddNode,
   handleDeleteNode,
+  currNode,
+  dndupdate,
 }) => {
   // logic for expand and collapse
   const [isExpanded, setIsExpanded] = useState({});
@@ -30,20 +32,48 @@ const Lists = ({
     if (e.key == "Delete") {
       handleDeleteNode(node);
     }
+    if (e.key == "Enter") {
+      handleExpand(node.name);
+    }
+  }
+  function handleDragStart(e, node) {
+    // when dragging begins
+    e.stopPropagation();
+    e.dataTransfer.setData("text/plain", node.id);
+  }
+  function handleDragOver(e) {
+    e.preventDefault();
+  }
+  function handleDrop(e, targetId) {
+    e.preventDefault();
+    e.stopPropagation();
+    // add the logic for changing manipulating tree data
+    const dragId = parseInt(e.dataTransfer.getData("text/plain"));
+    dndupdate(dragId, targetId);
   }
   return (
-    <div>
+    <div className={styles.container}>
       {listNodes.map((node) => (
-        <div key={node.id} className={styles.folder}>
+        <div
+          key={node.id}
+          className={styles.folder}
+          onDragOver={(e) => handleDragOver(e)}
+          onDrop={(e) => handleDrop(e, node.id)}
+        >
           {node.isFolder && (
             <span onClick={() => handleExpand(node.name)}>
               {isExpanded[node.name] ? "🔽" : "▶️"}
             </span>
           )}
           <span
+            draggable={true}
+            onDragStart={(e) => {
+              handleDragStart(e, node);
+            }}
             tabIndex={0}
             onClick={() => updateNodeSelect(node)}
             onKeyDown={(e) => handleKeyDown(e, node)}
+            // className={node.id === currNode && styles["selectedNode"]}
           >
             {node.name}
           </span>
@@ -55,6 +85,7 @@ const Lists = ({
               handleAddNode={handleAddNode}
             />
           )}
+
           {isExpanded[node.name] && node.isFolder && (
             <Lists
               listNodes={node.children}
@@ -66,6 +97,8 @@ const Lists = ({
               parentNodeTobeAdded={parentNodeTobeAdded}
               handleAddNode={handleAddNode}
               handleDeleteNode={handleDeleteNode}
+              currNode={currNode}
+              dndupdate={dndupdate}
             />
           )}
         </div>

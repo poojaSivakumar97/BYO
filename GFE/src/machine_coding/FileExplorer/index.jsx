@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import json from "./data.json";
 import Lists from "./Lists";
 import styles from "./File.module.css";
-import { addNodeToTree, deleteNodeFromTree } from "./utils/func";
+import {
+  addNodeToTree,
+  deleteNodeFromTree,
+  updateTreeNodeDrag,
+  findNodeById,
+} from "./utils/func";
 
 export default function FileExplorer() {
   const [lists, setLists] = useState(json);
@@ -39,6 +44,9 @@ export default function FileExplorer() {
     if (response) {
       setLists((prevLists) => deleteNodeFromTree(prevLists, removeNode.id));
     }
+  }
+  function dndupdate(dragId, dropId) {
+    setLists((prevLists) => updateTreeNodeDrag(prevLists, dragId, dropId));
   }
 
   return (
@@ -83,6 +91,8 @@ export default function FileExplorer() {
         parentNodeTobeAdded={selectedNodeId}
         handleAddNode={handleAddNode}
         handleDeleteNode={handleDeleteNode}
+        currNode={currNode}
+        dndupdate={dndupdate}
       />
     </div>
   );
