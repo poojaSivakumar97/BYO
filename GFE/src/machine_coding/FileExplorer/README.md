@@ -4,6 +4,9 @@ This is replica of file explorer/ vscode sidebar , added functionality to add an
 
 Delete the file/Folder using keyboard delete key function.
 
--Future scope : to add Drag and Drop functionality.
+Add Drag and Drop functionality using native Browser events.
+Attributes : draggable={true} , onDragStart ,onDragOver,onDrop -also stopPropagation due to event bubbling
+
+-Future scope :
 To add edit functionality.
 To add extension checker
