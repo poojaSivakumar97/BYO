@@ -43,7 +43,6 @@ export function findNodeById(root, currNodeId) {
 }
 
 export function updateTreeNodeDrag(nodes, draggedId, dropId) {
-  console.log(draggedId, dropId);
   // 1. Find the node to move
   const nodeToMove = findNodeById(nodes, draggedId);
   if (!nodeToMove) return nodes;
@@ -51,9 +50,9 @@ export function updateTreeNodeDrag(nodes, draggedId, dropId) {
   const treeWithoutNode = deleteNodeFromTree(nodes, draggedId);
   // 3. Update its parentId
   const newParentNode = findNodeById(nodes, dropId);
-  const newParentNodeId = parentNode.isFolder
-    ? parentNode.id
-    : parentNode.parentId;
+  const newParentNodeId = newParentNode.isFolder
+    ? newParentNode.id
+    : newParentNode.parentId;
   const updatedNode = {
     ...nodeToMove,
     parentId: newParentNodeId,

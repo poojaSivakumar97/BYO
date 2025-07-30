@@ -39,7 +39,10 @@ const Lists = ({
   function handleDragStart(e, node) {
     // when dragging begins
     e.stopPropagation();
-    e.dataTransfer.setData("text/plain", node.id);
+    e.dataTransfer.setData(
+      "application/node-id",
+      JSON.stringify({ id: node.id })
+    );
   }
   function handleDragOver(e) {
     e.preventDefault();
@@ -48,8 +51,8 @@ const Lists = ({
     e.preventDefault();
     e.stopPropagation();
     // add the logic for changing manipulating tree data
-    const dragId = parseInt(e.dataTransfer.getData("text/plain"));
-    dndupdate(dragId, targetId);
+    const dragId = JSON.parse(e.dataTransfer.getData("application/node-id"));
+    dndupdate(dragId.id, targetId);
   }
   return (
     <div className={styles.container}>
