@@ -1,0 +1,19 @@
+.inputContainer{
+    width: 500px;
+    padding: 10px;
+}
+.resultContainer{
+    width: 500px;
+    padding: 10px;
+    border: 1px solid black;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+.item{
+    display: block;
+    padding: 3px;
+    cursor: pointer;
+}
+.item:hover{
+    background-color: gray;
+}
