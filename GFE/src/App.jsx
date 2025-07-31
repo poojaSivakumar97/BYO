@@ -1,6 +1,7 @@
 import React from "react";
 import FileExplorer from "./machine_coding/FileExplorer";
 import AutoComplete from "./machine_coding/AutoComplete";
+import TicTacToe from "./machine_coding/TicTacToe";
 
 const App = () => {
   return (
@@ -8,7 +9,8 @@ const App = () => {
       {/* <aside>
         <FileExplorer />
       </aside> */}
-      <AutoComplete />
+      {/* <AutoComplete /> */}
+      <TicTacToe />
     </div>
   );
 };
