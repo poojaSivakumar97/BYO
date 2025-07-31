@@ -17,3 +17,8 @@
 .item:hover{
     background-color: gray;
 }
+.item:focus {
+  outline: none;
+  background-color: #def; /* Or any color to show focus */
+  border-radius: 4px;
+}

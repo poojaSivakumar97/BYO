@@ -60,7 +60,9 @@ const AutoComplete = () => {
         type="text"
         value={userInput}
         onChange={(e) => setUserInput(e.target.value)}
-        onBlur={() => setShowResult(false)}
+        onBlur={() => {
+          setShowResult(false);
+        }}
         onFocus={() => setShowResult(true)}
       />
       {data.length > 0 && (
