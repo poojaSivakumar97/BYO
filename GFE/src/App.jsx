@@ -5,6 +5,7 @@ import TicTacToe from "./machine_coding/TicTacToe";
 import { ProgressBar } from "./machine_coding/ProgressBar";
 import Pagination from "./machine_coding/Pagination";
 import ErrorBoundary from "./ErrorBoundary";
+import UPIForm from "./machine_coding/UPI_AutoComplete";
 
 const App = () => {
   // const bars = [5, 10, 20, 70, 80];
@@ -20,7 +21,8 @@ const App = () => {
         <ProgressBar key={bar} progress={bar} />
       ))} */}
 
-        <Pagination />
+        {/* <Pagination /> */}
+        {/* <UPIForm /> */}
       </ErrorBoundary>
     </React.Fragment>
   );
