@@ -5,6 +5,7 @@ import React from "react";
 // import { ProgressBar } from "./machine_coding/ProgressBar";
 // import Pagination from "./machine_coding/Pagination";
 import ErrorBoundary from "./ErrorBoundary";
+import BackToTop from "./machine_coding/BackToTop";
 // import UPIForm from "./machine_coding/UPI_AutoComplete";
 // import InteractiveShape from "./devtools/InteractiveShape";
 const InteractiveShape = React.lazy(() =>
@@ -24,7 +25,8 @@ const App = () => {
           {/* {bars.map((bar) => (
         <ProgressBar key={bar} progress={bar} />
       ))} */}
-          <InteractiveShape />
+          <BackToTop />
+          {/* <InteractiveShape /> */}
           {/* <Pagination /> */}
           {/* <UPIForm /> */}
         </ErrorBoundary>
